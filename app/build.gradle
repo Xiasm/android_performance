@@ -1,6 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'keyAlias'
+            keyPassword '8023613'
+            storeFile file('D:/keyalias/myjks.jks')
+            storePassword '8023613'
+        }
+    }
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.xsm.android_performance.android_performance"
@@ -19,7 +27,7 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:28.0.0-rc01'
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     testImplementation 'junit:junit:4.12'
